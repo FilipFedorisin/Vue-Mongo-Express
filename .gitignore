@@ -1,3 +1,18 @@
+#eshop -> master directory
+node_modules
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
 #server
 server/node_modules
 server/.DS_Store
@@ -31,5 +46,7 @@ user/*.sw?
 # local env files
 user/.env.local
 user/.env.*.local
+server/.env.local
+server/.env.*.local
 .env.local
 .env.*.local

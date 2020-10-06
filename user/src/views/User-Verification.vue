@@ -1,7 +1,17 @@
 <template>
   <div id="user-verification">
-    <!-- This is user-verification subscreen -->
-    <!--todo - Dellete one line bellow & within this comment-->
-    <p>This is user verifciation</p>
+    <p>This is @/views/User-Verification.vue AkA Invisible Parent with child control</p>
+
+    <router-view />
   </div>
 </template>
+
+<script></script>
+
+<style lang="scss" scoped>
+#user-verification {
+  border-style: solid;
+  border-color: red;
+  border-width: 2px;
+}
+</style>

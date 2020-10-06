@@ -6,12 +6,17 @@ const routes = [
   //? - The "/<subview>" router NAVIGATION
   { path: "/", component: () => import("@/views/Home.vue") },
   { path: "/about", component: () => import("@/views/About.vue") },
-  { path: "/user-verification", component: () => import("@/views/User-Verification") },
 
-  //? - The /user-verification/<subcomponent>
-  { path: "/register", component: () => import("@/components/RegisterSystem/Register.vue") },
-  { path: "/login", component: () => import("@/components/RegisterSystem/Login.vue") },
-  { path: "/recovery", component: () => import("@/components/RegisterSystem/Recovery.vue") },
+  //? - The "/user-verification/<subcomponent>" router SUBLOAD-NAVIGATION
+  {
+    path: "/user-verification",
+    component: () => import("@/views/User-Verification.vue"),
+    children: [
+      { path: "login", component: () => import("@/components/User-Verification/Login.vue") },
+      { path: "register", component: () => import("@/components/User-Verification/Register.vue") },
+      { path: "recovery", component: () => import("@/components/User-Verification/Recovery.vue") },
+    ],
+  },
 ]
 
 const router = createRouter({
