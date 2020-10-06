@@ -1,0 +1,10 @@
+// Filip Fedorisin
+
+basic server proxy
+create database
+
+// Stano Fedorisin
+
+Register page
+Login page
+Forgot password page
