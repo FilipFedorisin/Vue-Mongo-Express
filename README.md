@@ -1,6 +1,6 @@
-Eshop website for future resourcing.
+###Eshop - website for future resourcing.
 
-Built on MEVN stack (Vue, Express, MongoDB)
+#####Built on MEVN stack (Vue, Express, MongoDB)
 
 To setup for Development:
 
@@ -8,7 +8,6 @@ To setup for Development:
 - run \$npm install
 - run \$npm run server
 - the node-user-server runs on local server use "localhost:5000"
-
 - cd into server directory "@/user/"
 - run \$npm install
 - run \$npm run user
