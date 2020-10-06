@@ -5,8 +5,8 @@
     <router-link to="/user-verification/login">Login</router-link>
     <router-link to="/user-verification/recovery">Recovery</router-link>
 
-    <p>Welcome Back</p>
     <div class="main">
+      <p>Welcome Back</p>
       <h3>Sign In</h3>
       <input type="text" name="username" id="username" />
       <input type="email" name="email" id="email" />
@@ -16,13 +16,7 @@
     <p>or</p>
     <img src="" alt="" />
     <img src="" alt="" />
-    <p>
-      Don't have an account?<router-link
-        to="/user-verification/register"
-        id="signUp-link"
-        >Sign up</router-link
-      >
-    </p>
+    <p>Don't have an account?<router-link to="/user-verification/register" id="signUp-link">Sign up</router-link></p>
   </div>
 </template>
 
@@ -30,8 +24,10 @@
 
 <style lang="scss">
 #login {
+  background-color: green;
+  margin: 0 min(40%);
   border-style: solid;
-  border-color: blue;
+  box-shadow: grey;
   border-width: 2px;
 
   a {
@@ -47,15 +43,18 @@
   }
   .main {
     display: inline-block;
-    input{
+    input {
       display: block;
-      margin: 15px 5px 15px 5px;
+      margin: 10px 0px;
       height: 20px;
     }
-    button{
+    button {
       width: 100%;
-      color:white;
+      height: 30px;
+      color: white;
       background-color: lightblue;
+      border: none;
+      border-radius: 5px;
     }
   }
 }
