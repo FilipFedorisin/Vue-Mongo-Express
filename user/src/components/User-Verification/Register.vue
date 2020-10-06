@@ -6,9 +6,9 @@
     <router-link to="/user-verification/recovery">Recovery</router-link>
     <br />
 
-    <input v-model="email" type="email" namme="email" placeholder="your@email.com" />
+    <input v-model="email" type="email" name="email" placeholder="your@email.com" />
     <br />
-    <input v-model="password" type="password" namme="password" placeholder="password" />
+    <input v-model="password" type="password" name="password" placeholder="password" />
     <br />
     <button @click="register">Register</button>
 
