@@ -4,12 +4,37 @@
     <router-link to="/user-verification/register">Register</router-link>
     <router-link to="/user-verification/login">Login</router-link>
     <router-link to="/user-verification/recovery">Recovery</router-link>
+    <br />
+
+    <input v-model="email" type="email" namme="email" placeholder="your@email.com" />
+    <br />
+    <input v-model="password" type="password" namme="password" placeholder="password" />
+    <br />
+    <button @click="register">Register</button>
 
     <p>This is @/components/User-Verification/Register.vue</p>
   </div>
 </template>
 
-<script></script>
+<script>
+import AuthenticationService from "@/services/AuthenticationService"
+export default {
+  data() {
+    return {
+      email: "",
+      password: "",
+    }
+  },
+  methods: {
+    async register() {
+      await AuthenticationService.register({
+        email: this.email,
+        password: this.password,
+      })
+    },
+  },
+}
+</script>
 
 <style lang="scss">
 #login {
