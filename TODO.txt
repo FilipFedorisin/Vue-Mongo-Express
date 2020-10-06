@@ -1,3 +1,7 @@
+// Global
+
+the mongodb database must be created & hosted!!
+
 // Filip Fedorisin
 
 create architecture

@@ -13,6 +13,21 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
+#api
+api/node_modules
+api/.DS_Store
+api/npm-debug.log*
+api/yarn-debug.log*
+api/yarn-error.log*
+api/pnpm-debug.log*
+api/.idea
+api/.vscode
+api/*.suo
+api/*.ntvs*
+api/*.njsproj
+api/*.sln
+api/*.sw?
+
 #server
 server/node_modules
 server/.DS_Store
@@ -44,6 +59,8 @@ user/*.sln
 user/*.sw?
 
 # local env files
+api/.env.local
+api/.env.*.local
 user/.env.local
 user/.env.*.local
 server/.env.local
