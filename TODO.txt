@@ -1,5 +1,6 @@
 // Filip Fedorisin
 
+create architecture
 basic server proxy
 create database
 
