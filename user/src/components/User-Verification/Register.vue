@@ -6,31 +6,51 @@
     <router-link to="/user-verification/recovery">Recovery</router-link>
     <br />
 
-    <input v-model="email" type="email" name="email" placeholder="your@email.com" />
-    <br />
-    <input v-model="password" type="password" name="password" placeholder="password" />
-    <br />
-    <button @click="register">Register</button>
+    <form id="register-form" @submit.prevent="_createUser">
+      <input v-model="email" type="email" name="email" placeholder="your@email.com" />
+      <br />
+      <input v-model="password" type="password" name="password" placeholder="password" />
+      <br />
+      <button type="submit">Register</button>
+    </form>
 
     <p>This is @/components/User-Verification/Register.vue</p>
   </div>
 </template>
 
 <script>
-import AuthenticationService from "@/services/AuthenticationService"
+import { mapMutations, mapActions } from "vuex"
+
 export default {
   data() {
     return {
       email: "",
       password: "",
+      formValid: true,
     }
   },
+  watch: {
+    email: function() {
+      this.registerUser()
+    },
+    password: function() {
+      this.registerUser()
+    },
+  },
   methods: {
-    async register() {
-      await AuthenticationService.register({
-        email: this.email,
-        password: this.password,
-      })
+    ...mapMutations(["setUser"]),
+    ...mapActions(["createUser"]),
+    registerUser() {
+      if (this.formValid) {
+        this.setUser({ email: this.email, password: this.password })
+      }
+    },
+    _createUser() {
+      this.createUser()
+      console.log(`User was registered as email:"${this.email}" pass:"${this.password}"`)
+
+      this.email = null
+      this.password = null
     },
   },
 }
@@ -49,6 +69,10 @@ export default {
     &.router-link-exact-active {
       color: #42b983;
     }
+  }
+
+  #register-form {
+    display: block;
   }
 }
 </style>

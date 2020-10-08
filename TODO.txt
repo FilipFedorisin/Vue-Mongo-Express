@@ -4,8 +4,6 @@ the mongodb database must be created & hosted!!
 
 // Filip Fedorisin
 
-create architecture
-basic server proxy
 create database
 
 // Stano Fedorisin

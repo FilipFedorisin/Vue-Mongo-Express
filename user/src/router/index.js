@@ -4,7 +4,7 @@ const routes = [
   //! - Architecture => "/<subview>/<subcomponent>/<subcategory_<index [0 to infinite] or id [hash]>>"
 
   //? - The "/<subview>" router NAVIGATION
-  { path: "/", component: () => import("@/views/Home.vue") },
+  { path: "/", component: () => import("@/views/Index.vue") },
   { path: "/about", component: () => import("@/views/About.vue") },
 
   //? - The "/user-verification/<subcomponent>" router SUBLOAD-NAVIGATION

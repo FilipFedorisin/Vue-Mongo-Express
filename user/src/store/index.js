@@ -1,8 +1,12 @@
-import { createStore } from "vuex";
+import { createStore } from "vuex"
+
+import userVerification from "./modules/userVerification.js"
 
 export default createStore({
   state: {},
   mutations: {},
   actions: {},
-  modules: {}
-});
+  modules: {
+    userVerification,
+  },
+})
