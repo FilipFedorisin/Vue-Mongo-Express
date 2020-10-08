@@ -1,6 +1,6 @@
-###Eshop - website for future resourcing.
-
-#####Built on MEVN stack (MongoDB, Express, Vue, Node)
+shop - website for future resourcing.
+Built on MEVN stack (MongoDB, Express, Vue, Node)
+snapshot v0.1.0 - server and database working with frontend requests
 
 To setup for Development:
 
