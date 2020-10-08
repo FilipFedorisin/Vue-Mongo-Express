@@ -2,16 +2,18 @@ const express = require("express")
 const fs = require("fs")
 const cors = require("cors")
 const { getClient } = require("./db")
+const { stringify } = require("querystring")
 
 const app = express()
-console.log("Server running...")
+const PORT = process.env.PORT || 5000
+console.log(`Node - Server running on http://localhost:${PORT}`)
 
 app.use(express.json())
 app.use(cors())
 
 app.get("/", (req, res) => {
   res.send({
-    message: "This is a message",
+    serverMessage: "The server is running",
   })
 })
 
@@ -30,4 +32,12 @@ app.post("/api/users", async (req, res) => {
   res.send(result.ops[0])
 })
 
-app.listen(process.env.PORT || 5000)
+app.get("/api/users", async (req, res) => {
+  //! SECURITY WARNING REMOVE AFTER INTEGRATION
+  const client = await getClient()
+  const collection = client.collection("users")
+  const users = await collection.find({}).toArray()
+  res.send(users)
+})
+
+app.listen(PORT)

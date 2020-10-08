@@ -8,9 +8,9 @@ let db = null
 exports.getClient = async () => {
   return new Promise((resolve, reject) => {
     if (!db) {
-      MongoClient.connect(url, function (err, client) {
+      MongoClient.connect(url, { useUnifiedTopology: true }, function (err, client) {
         assert.strictEqual(null, err)
-        console.log("MongoDB - Connected succesfully to server.")
+        console.log("MongoDB - Database connection successfull")
         db = client.db(dbName)
         resolve(db)
       })

@@ -1,13 +1,15 @@
-// Global
-
-the mongodb database must be created & hosted!!
-
 // Filip Fedorisin
 
-create database
+-create user authentification services
+-add tokens & familiarize
+-create concept for user's profile page for Stano to finish
+-add option to remove users
+-add option to change certain user's info
+-add option to recover password
+
 
 // Stano Fedorisin
 
-Register page
-Login page
-Forgot password page
+-register page HTML & STYLE ONLY!!
+-login page HTML & STYLE ONLY!!
+-recovery page HTML & STYLE ONLY!!

@@ -6,11 +6,10 @@
     <router-link to="/user-verification/recovery">Recovery</router-link>
     <br />
 
+    <!--//? Stando => toto mozes pomenit ale zachovaj tam v-model aj submit na form a button-->
     <form id="register-form" @submit.prevent="_createUser">
       <input v-model="email" type="email" name="email" placeholder="your@email.com" />
-      <br />
       <input v-model="password" type="password" name="password" placeholder="password" />
-      <br />
       <button type="submit">Register</button>
     </form>
 

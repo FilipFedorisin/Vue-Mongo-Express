@@ -1,7 +1,9 @@
 import axios from "axios"
+import router from "../../router/index"
 
 const state = {
   user: {},
+  users: ["shit"],
 }
 const mutations = {
   setUser(state, { email, password }) {
@@ -12,13 +14,8 @@ const mutations = {
 const actions = {
   async createUser(context) {
     // TODO: Wrap in a service helper
-
-    const response = await axios
-      .post("http://localhost:5000/api/users", context.state.user)
-      .catch((err) => console.log(err))
-    console.log(response)
-
-    // TODO: Rediredct to Login page route
+    await axios.post("http://localhost:5000/api/users", context.state.user).catch((err) => console.log(err))
+    router.push("/user-verification/login")
   },
 }
 
