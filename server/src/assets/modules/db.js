@@ -1,11 +1,12 @@
-const MongoClient = require("mongodb").MongoClient
-const assert = require("assert")
+import MongoClient from "mongodb"
+import assert from "assert"
+
 const url = "mongodb://localhost:27017"
 const dbName = "eshop"
 
 let db = null
 
-exports.getClient = async () => {
+async function getClient() {
   return new Promise((resolve, reject) => {
     if (!db) {
       MongoClient.connect(url, { useUnifiedTopology: true }, function (err, client) {
@@ -20,6 +21,11 @@ exports.getClient = async () => {
   })
 }
 
-exports.close = () => {
+function close() {
   client.close()
+}
+
+export default {
+  getClient,
+  close,
 }

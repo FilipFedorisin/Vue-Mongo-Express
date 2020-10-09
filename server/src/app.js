@@ -1,8 +1,8 @@
-const express = require("express")
-const fs = require("fs")
-const cors = require("cors")
-const { getClient } = require("./db")
-const { stringify } = require("querystring")
+import express from "express"
+import fs from "fs"
+import cors from "cors"
+import db from "./assets/modules/db.js"
+import { logTraffic } from "./assets/modules/reqLog.js"
 
 const app = express()
 const PORT = process.env.PORT || 5000
@@ -18,26 +18,18 @@ app.get("/", (req, res) => {
 })
 
 app.get("/favicon.ico", (req, res) => {
-  var img = fs.readFileSync(__dirname + "/assets/favicon.ico")
+  var img = fs.readFileSync("/assets/images/favicon.ico")
   res.writeHead(200, { "Content-Type": "image/x-icon" })
   res.end(img, "binary")
 })
 
-app.post("/api/users", async (req, res) => {
+app.post("/api/users", logTraffic, async (req, res) => {
   // TODO: refactor into handler / interactor / persistence
 
-  const client = await getClient()
+  const client = await db.getClient()
   const collection = client.collection("users")
   const result = await collection.insertOne(req.body)
   res.send(result.ops[0])
-})
-
-app.get("/api/users", async (req, res) => {
-  //! SECURITY WARNING REMOVE AFTER INTEGRATION
-  const client = await getClient()
-  const collection = client.collection("users")
-  const users = await collection.find({}).toArray()
-  res.send(users)
 })
 
 app.listen(PORT)
