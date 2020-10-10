@@ -1,5 +1,7 @@
 // Filip Fedorisin
 
+-rename reqLog.js to something more readable
+
 -create user authentification services
 -add tokens & familiarize
 -create concept for user's profile page for Stano to finish
