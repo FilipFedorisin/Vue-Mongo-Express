@@ -32,4 +32,12 @@ app.post("/api/users", logTraffic, async (req, res) => {
   res.send(result.ops[0])
 })
 
+app.get("/api/users", async (req, res) => {
+  //! SECURITY WARNING REMOVE AFTER INTEGRATION
+  const client = await db.getClient()
+  const collection = client.collection("users")
+  const users = await collection.find({}).toArray()
+  res.send(users)
+})
+
 app.listen(PORT)
