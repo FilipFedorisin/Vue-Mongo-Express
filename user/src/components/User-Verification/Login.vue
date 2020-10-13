@@ -1,6 +1,6 @@
 <template>
   <div id="login">
-    <div class="containter">
+    <div class="container">
       <!-- 
         //TODO: Need to add some kind of form valiadation before-post request
         //TODO: Need to add vuex instance to validate login informations
@@ -43,7 +43,7 @@
   align-items: center;
   //-> #login
 
-  .containter {
+  .container {
     height: auto;
     width: 400px;
     margin-bottom: 0;

@@ -1,17 +1,25 @@
 <template>
-  <div id="Register">
-    <div class="main">
-      <p>Welcome</p>
-      <h3>Sign Up</h3>
-      <form id="register-form" @submit.prevent="_createUser">
-        <input v-model="email" type="email" name="email" placeholder="your@email.com" />
-        <input v-model="password" type="password" name="password" placeholder="password" />
+  <div id="register">
+    <div class="container">
+      <div class="welcomeBanner">
+        <p>Welcome</p>
+        <h3>Sign Up</h3>
+      </div>
+
+      <div class="signUpForm">
+        <form id="register-form" @submit.prevent="_createUser">
+          <input v-model="email" type="email" name="email" placeholder="Email" />
+          <input v-model="password" type="password" name="password" placeholder="Password" />
+        </form>
         <button type="submit">Register</button>
-      </form>
-      <p2>or</p2>
-      <img src="../../assets/Icons/Facebook.png" />
-      <img src="../../assets/Icons/google.png" />
-      <p3>Do you have account? <router-link to="/user-verification/login" id="signIn-link">Sign in</router-link></p3>
+      </div>
+
+      <div class="otherOptions">
+        <p2>or</p2>
+        <img src="../../assets/Icons/Facebook.png" />
+        <img src="../../assets/Icons/google.png" />
+        <p3>Do you have account? <router-link to="/user-verification/login" id="signIn-link">Sign in</router-link></p3>
+      </div>
     </div>
   </div>
 </template>
@@ -55,42 +63,122 @@ export default {
 </script>
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap");
+#register {
+  font-family: "Roboto";
+  min-height: 93vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //-> #login
 
-#Register {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-    "Helvetica Neue", sans-serif;
-  min-height: 100vh;
+  .container {
+    height: auto;
+    width: 400px;
+    margin-bottom: 0;
+    padding: 15px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px $color-tertiary;
+    background-color: $color-secondary;
+    //-> .container
 
-  .main {
-    height: 72vh;
-    width: 30%;
-    margin: 15px auto;
-    padding: 10px 0px;
-    box-shadow: 2px 2px 20px #afacac;
+    .welcomeBanner {
+      width: 80%;
+      margin: auto;
+      //-> .welcomeBanner
 
-    h3 {
-      color: #24a0ed;
-      font-size: 20px;
-      margin: 0;
-      padding-top: 22px;
+      p {
+        //Welcome back
+        font-weight: bold;
+        text-align: left;
+        font-size: 15px;
+        padding: 0;
+        margin: 0;
+        color: $color-primary;
+        font-style: italic;
+      }
+      h3 {
+        //Sign In
+        color: $color-primary;
+        font-size: 35px;
+        margin: 0;
+        padding: 0;
+        padding-top: 22px;
+        padding-bottom: 22px;
+      }
     }
 
-    #register-form {
-      margin: 0;
-      padding-top: 20px;
+    .signUpForm {
+      width: 80%;
+      margin: auto;
+      padding: 0;
+      //-> .loginForm
+
+      input {
+        //email and password
+        padding-left: 2%;
+        padding-right: 2%;
+        box-shadow: 0px 0px 7px $color-tertiary;
+        border-radius: 7px;
+        border: none;
+        display: block;
+
+        margin-top: 20px;
+        width: 96%;
+        height: 35px;
+        font-size: 18px;
+      }
+      ::placeholder {
+        margin-left: 7px;
+        margin-right: 7px;
+        color: $color-primary-light;
+      }
+      button {
+        //Log in
+        padding: 0;
+        margin: 0;
+        border: 0;
+        transition: all 0.5s ease;
+        margin: auto;
+        margin-top: 20px;
+        height: 37px;
+        width: 50%;
+        border-radius: 7px;
+        color: white;
+        background-color: $color-button-positive;
+        font-size: 18px;
+        box-shadow: 0px 0px 7px $color-tertiary;
+      }
+      button:hover {
+        transition: all 0.21s ease;
+        transform: scale(1.1);
+        background-color: $color-button-onHover;
+        box-shadow: 0px 0px 13px $color-button-onHover;
+        cursor: pointer;
+      }
+    }
+
+    .otherOptions {
+      width: 80%;
+      margin: auto;
+      padding: 0;
+      //-> .otherOptions
 
       p1 {
+        //Forgot password
         display: block;
-        text-align: right;
-        padding-right: 17%;
+        text-align: center;
         padding-top: 15px;
+        //-> p1
 
         a:hover {
-          transition: all 0.5s ease;
-          color: #01fa37;
+          transition: all 0.21s ease;
+          transform: scale(1.5);
+          color: $color-button-onHover;
+          text-shadow: 0px 0px 1px $color-button-onHover;
+          cursor: pointer;
         }
-
         a {
           transition: all 0.5s ease;
           font-weight: bold;
@@ -99,82 +187,54 @@ export default {
           color: #24a0ed;
         }
       }
-      input {
-        box-shadow: 1px 1px 3px #afacac;
-        border-radius: 3px;
-        border: none;
+      p2 {
+        // or
         display: block;
-        margin: 15px auto;
-        width: 64%;
-        height: 25px;
+        padding-top: 20px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 15px;
+        color: $color-primary;
       }
-      button:hover {
+      img {
+        // fb andd google icon
+        transition: transform 0.5s;
+        padding: 20px;
+        width: 50px;
+      }
+      img:hover {
         transform: scale(1.1);
-        transition: all 0.5s ease;
-        background-color: #01fa37;
-        color: black;
+        transition: transform 0.21s;
+        cursor: pointer;
       }
-      button {
-        transition: all 0.5s ease;
-        margin: 20px auto 0 auto;
+      p3 {
+        // dont have an account?
+        margin: 0;
+        padding: 0;
         display: block;
-        box-shadow: 1px 1px 3px #afacac;
-        height: 30px;
-        width: 65%;
-        color: white;
-        background-color: #24a0ed;
-        border: none;
-        border-radius: 3px;
+        margin-top: 10px;
+        color: black;
+        font-weight: bold;
+        text-align: left;
+        font-size: 15px;
+        color: $color-primary;
+        font-style: italic;
+        //-> p3
+
+        a {
+          //Sign Up
+          transition: all 0.5s ease;
+          color: #24a0ed;
+          text-decoration: none;
+        }
+        a:hover {
+          transition: all 0.21s ease;
+          transform: scale(1.5);
+          color: $color-button-onHover;
+          text-shadow: 0px 0px 1px $color-button-onHover;
+          cursor: pointer;
+        }
       }
-    }
-    p {
-      margin: 0;
-      padding-top: 20px;
-      padding-left: 20px;
-      font-weight: bold;
-      text-align: left;
-      font-size: 15px;
-      color: black;
-    }
-    p2 {
-      display: block;
-      padding-top: 56px;
-      text-align: center;
-      font-weight: bold;
-      font-size: 15px;
-      color: black;
-    }
-    img:hover {
-      transform: scale(1.5);
-      transition: transform 0.5s;
-    }
-    img {
-      transition: transform 0.5s;
-      padding: 10px 15px 0px 15px;
-    }
-    p3 {
-      position: static;
-      display: block;
-      padding-left: 20px;
-      margin-top: 60px;
-      font-weight: bold;
-      text-align: left;
-      font-size: 15px;
-      color: black;
-    }
-
-    img {
-      width: 50px;
-    }
-
-    a:hover {
-      transition: all 0.5s ease;
-      color: #01fa37;
-    }
-    a {
-      transition: all 0.5s ease;
-      color: #24a0ed;
-      text-decoration: none;
     }
   }
 
@@ -185,7 +245,7 @@ export default {
       margin-top: 10px;
       padding-top: 10px;
       box-shadow: 2px 2px 20px #afacac;
-      #register-form {
+      .inputPanel {
         input {
           width: 90%;
           height: 35px;
@@ -197,7 +257,6 @@ export default {
       }
     }
   }
-
   @media screen and (max-width: 600px) {
     .main {
       width: 100%;
@@ -205,7 +264,7 @@ export default {
       margin: auto;
       padding-top: 10px;
       box-shadow: 2px 2px 20px #afacac;
-      #register-form {
+      .inputPanel {
         input {
           width: 90%;
           height: 35px;
