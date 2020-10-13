@@ -69,10 +69,9 @@
         height: 25px;
       }
       button:hover {
-        transform: scale(1.1);
+        transform: scale(1.008);
         transition: all 0.5s ease;
-        background-color: #01fa37;
-        color: black;
+        background-color: #2b9fe7;
       }
       button {
         transition: all 0.5s ease;

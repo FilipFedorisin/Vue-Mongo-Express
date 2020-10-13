@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { mapMutations, mapActions } from "vuex";
+import { mapMutations, mapActions } from "vuex"
 
 export default {
   data() {
@@ -25,14 +25,14 @@ export default {
       email: "",
       password: "",
       formValid: true,
-    };
+    }
   },
   watch: {
     email: function() {
-      this.registerUser();
+      this.registerUser()
     },
     password: function() {
-      this.registerUser();
+      this.registerUser()
     },
   },
   methods: {
@@ -40,18 +40,18 @@ export default {
     ...mapActions(["createUser"]),
     registerUser() {
       if (this.formValid) {
-        this.setUser({ email: this.email, password: this.password });
+        this.setUser({ email: this.email, password: this.password })
       }
     },
     _createUser() {
-      this.createUser();
-      console.log(`User was registered as email:"${this.email}" pass:"${this.password}"`);
+      this.createUser()
+      console.log(`User was registered as email:"${this.email}" pass:"${this.password}"`)
 
-      this.email = null;
-      this.password = null;
+      this.email = null
+      this.password = null
     },
   },
-};
+}
 </script>
 
 <style lang="scss">

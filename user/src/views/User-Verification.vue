@@ -6,4 +6,8 @@
 
 <script></script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+#user-verification {
+  max-height: 90vh;
+}
+</style>
