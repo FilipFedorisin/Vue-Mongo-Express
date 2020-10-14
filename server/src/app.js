@@ -1,8 +1,8 @@
 import express from "express"
 import fs from "fs"
 import cors from "cors"
-import db from "./assets/modules/db.js"
-import { logTraffic } from "./assets/modules/reqLog.js"
+import db from "./database.js"
+import { logTraffic } from "./middleware/reqLog.js"
 
 const app = express()
 const PORT = process.env.PORT || 5000
