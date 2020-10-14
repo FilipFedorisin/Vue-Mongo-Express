@@ -10,6 +10,7 @@
         <form id="register-form" @submit.prevent="_createUser">
           <input v-model="email" type="email" name="email" placeholder="Email" />
           <input v-model="password" type="password" name="password" placeholder="Password" />
+          <input v-model="password" type="password" name="password" placeholder="Repeat Password" />
         </form>
         <button type="submit">Register</button>
       </div>

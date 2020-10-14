@@ -12,8 +12,7 @@
       </div>
 
       <div class="otherOptions">
-        <p1><router-link to="/user-verification/login">Go Back To Login</router-link></p1
-        >,
+        <p1><router-link to="/user-verification/login">Go Back To Login</router-link></p1>
         <p3>
           Don't have an account?
           <router-link to="/user-verification/register" id="signUp-link">Sign up</router-link>

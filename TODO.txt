@@ -1,17 +1,17 @@
-// Filip Fedorisin
-
--rename reqLog.js to something more readable
+//// Filip Fedorisin
 
 -create user authentification services
 -add tokens & familiarize
+
 -create concept for user's profile page for Stano to finish
 -add option to remove users
 -add option to change certain user's info
 -add option to recover password
 
 
-// Stano Fedorisin
+-rename reqLog.js to something more readable
+ the path: "eshop/server/src/assets/modules/reqLog.js
 
--register page HTML & STYLE ONLY!!
--login page HTML & STYLE ONLY!!
--recovery page HTML & STYLE ONLY!!
+//// Stano Fedorisin
+
+-style About.vue
