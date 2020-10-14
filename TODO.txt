@@ -1,14 +1,18 @@
 //// Filip Fedorisin
 
--create user authentification services
+/primary
+-create user auth services with jwt
 -add tokens & familiarize
-
--create concept for user's profile page for Stano to finish
 -add option to remove users
 -add option to change certain user's info
 -add option to recover password
+-create concept for user's profile page for Stano to finish
 
+/secondary
+-fix axios URL request in vuex
+-fix routing for /user-verification 
 
+/tertiary
 -rename reqLog.js to something more readable
  the path: "eshop/server/src/assets/modules/reqLog.js
 
