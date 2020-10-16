@@ -1,8 +1,0 @@
-Architecture => "/<subview>/<subcomponent>/<subcategory_<index [0 to infinite] or id [hash]>>"
-
-"/                          " => "@/views/Index.vue                     " => "The frontpage "
-"/about                     " => "@/views/About.vue                     " => "The about page"
-"/user-verification         " => "@/views/User-Verification.vue         " => "Default is Login"
-"/user-verification/login   " => "@/views/User-Verification/Login.vue   " => "Ref with recovery and register"
-"/user-verification/register" => "@/views/User-Verification/Register.vue" => "Ref with login and recovery"
-"/user-verification/recovery" => "@/views/User-Verification/Recovery.vue" => "Ref with login and register"
