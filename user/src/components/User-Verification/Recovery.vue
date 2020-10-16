@@ -180,42 +180,13 @@
       }
     }
   }
-
-  @media screen and (max-width: 1250px) {
-    .main {
-      width: 66%;
-      margin: auto;
-      margin-top: 10px;
-      padding-top: 10px;
-      box-shadow: 2px 2px 20px #afacac;
-      .inputPanel {
-        input {
-          width: 90%;
-          height: 35px;
-        }
-        button {
-          width: 90%;
-          height: 35px;
-        }
-      }
-    }
-  }
-  @media screen and (max-width: 600px) {
-    .main {
-      width: 100%;
-      height: 100vh;
-      margin: auto;
-      padding-top: 10px;
-      box-shadow: 2px 2px 20px #afacac;
-      .inputPanel {
-        input {
-          width: 90%;
-          height: 35px;
-        }
-        button {
-          width: 90%;
-          height: 35px;
-        }
+  @media screen and (max-width: 640px) {
+    .container {
+      width: 85%;
+      .welcomeBanner,
+      .loginForm,
+      .otherOptions {
+        width: 95%;
       }
     }
   }

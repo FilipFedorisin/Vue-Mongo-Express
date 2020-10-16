@@ -14,7 +14,21 @@
 
       <div class="loginForm">
         <input id="username" placeholder="Email" />
-        <input type="password" placeholder="Password" />
+        <input v-model="login.password" type="password" placeholder="Password" />
+
+        <p v-show="!login.passValidLength" class="loginError">Password must be 6 digits or more</p>
+        <p v-show="login.passValidLength" class="loginTrue">Password must be 6 digits or more</p>
+
+        <p v-if="!login.passValidDigits" class="loginError">Password must contain a number</p>
+        <p v-if="login.passValidDigits" class="loginTrue">Password must contain a number</p>
+
+        <p v-show="!login.passValidCapital" class="loginError">
+          Password must contain uppercase and lowercase letters
+        </p>
+        <p v-show="login.passValidCapital" class="loginTrue">
+          Password must contain uppercase and lowercase letters
+        </p>
+
         <button>Login</button>
       </div>
 
@@ -32,7 +46,31 @@
   </div>
 </template>
 
-<script></script>
+<script>
+import * as formValidation from "../../assets/scripts/formValidation.js"
+
+export default {
+  name: "container",
+  data() {
+    return {
+      login: {
+        username: "",
+        password: "",
+        passValidLength: false,
+        passValidDigits: false,
+        passValidCapital: false,
+      },
+    }
+  },
+  watch: {
+    "login.password": function(password) {
+      this.login.passValidLength = formValidation.passLength(password)
+      this.login.passValidCapital = formValidation.passCapital(password)
+      this.login.passValidDigits = formValidation.passNumber(password)
+    },
+  },
+}
+</script>
 
 <style lang="scss">
 #login {
@@ -105,6 +143,13 @@
         margin-left: 7px;
         margin-right: 7px;
         color: $color-primary-light;
+      }
+      .loginError {
+        color: red;
+      }
+      .loginTrue {
+        color: $color-button-onHover;
+        text-decoration: line-through;
       }
       button {
         //Log in
@@ -210,41 +255,13 @@
     }
   }
 
-  @media screen and (max-width: 1250px) {
-    .main {
-      width: 66%;
-      margin: auto;
-      margin-top: 10px;
-      padding-top: 10px;
-      box-shadow: 2px 2px 20px #afacac;
-      .inputPanel {
-        input {
-          width: 90%;
-          height: 35px;
-        }
-        button {
-          width: 90%;
-          height: 35px;
-        }
-      }
-    }
-  }
-  @media screen and (max-width: 600px) {
-    .main {
-      width: 100%;
-      height: 100vh;
-      margin: auto;
-      padding-top: 10px;
-      box-shadow: 2px 2px 20px #afacac;
-      .inputPanel {
-        input {
-          width: 90%;
-          height: 35px;
-        }
-        button {
-          width: 90%;
-          height: 35px;
-        }
+  @media screen and (max-width: 640px) {
+    .container {
+      width: 85%;
+      .welcomeBanner,
+      .loginForm,
+      .otherOptions {
+        width: 95%;
       }
     }
   }
