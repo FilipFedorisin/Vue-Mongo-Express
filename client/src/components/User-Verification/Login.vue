@@ -9,7 +9,7 @@
 
       <div class="welcomeBanner">
         <p>Welcome Back</p>
-        <h3>Login</h3>
+        <h3 id="_googleInput">Login</h3>
       </div>
 
       <div class="loginForm">
@@ -145,7 +145,9 @@ export default {
         color: $color-primary-light;
       }
       .loginError {
-        color: red;
+        color: $color-negative;
+        font-style: italic;
+        font-weight: bold;
       }
       .loginTrue {
         color: $color-button-onHover;

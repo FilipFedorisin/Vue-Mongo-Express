@@ -14,7 +14,7 @@ To setup for Development:
 - cd into server directory "@/user/"
 - remove any node_modules folder
 - run \$npm install
-- run \$npm run user
+- run \$npm run dev
 - the vue-user runs on local server use "localhost:8080"
 
 Authors:
